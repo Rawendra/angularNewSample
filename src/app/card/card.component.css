@@ -1,0 +1,10 @@
+.cssClass{
+  border: 2px solid tomato;
+  background-color: pink;
+}
+
+.danger{
+ font-size: larger;
+ background-color: brown;
+ color: cornsilk;
+}

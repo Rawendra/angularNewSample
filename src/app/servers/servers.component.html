@@ -1,0 +1,23 @@
+<app-server *ngIf="clicked; else noserver"></app-server>
+<app-server *ngIf="clicked; else noserver"></app-server>
+
+
+<button (click)="onClick()" class="btn btn-primary">CLICK</button>
+{{ clicked }}
+
+<div *ngIf="clicked" class="para" [innerText]="paratext"></div>
+
+Enter some input:
+<input type="text" class="form-control" (input)="handleInput($event)" />
+
+You have entered {{ inputText }}
+
+This string is two way binded: {{ twoWayBindedString }}:<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="twoWayBindedString"
+/>
+
+
+<ng-template  #noserver >no server yet</ng-template>
+<app-card></app-card>
