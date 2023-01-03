@@ -1,0 +1,20 @@
+<p>parent works!</p>
+
+<div class="parent-class">
+  <div *ngIf="showChild1">
+    <app-child [elem]="child1Content" [default]="default">
+      <span *ngIf="default" >{{child1Content}}</span>
+      <span *ngIf="!default" >no default value</span>
+    </app-child>
+  </div>
+  <div *ngIf="showChild2">
+    <app-child [elem]="child2Content" [default]="default">
+      <span *ngIf="default" >{{child2Content}}</span>
+      <span *ngIf="!default" >no default value</span>
+    </app-child>
+  </div>
+</div>
+
+<button (click)="toggleChild1()">TOGGLE CHILD1</button>
+<button (click)="toggleChild2()">TOGGLE CHILD2</button>
+<button (click)="toggleDefault()">TOGGLE DEFAULT</button>
