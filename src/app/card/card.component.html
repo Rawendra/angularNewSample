@@ -4,15 +4,22 @@ TYPE COLOR: <input type="text" [(ngModel)]="color" class="form-control" />
 <p [ngStyle]="{ backgroundColor: getColor() }">this is sample para</p>
 <button class="btn btn-danger" (click)="handleClick()">CLICK</button>
 <button class="btn btn-danger" (click)="setDanger()">DANGER</button>
-<p [ngClass]="{ cssClass: getClassCondition(), danger: getDangerCondition() }">
+<p #simplePara [ngClass]="{ cssClass: getClassCondition(), danger: getDangerCondition() }">
   this is sample para
 </p>
 
-<div *ngFor="let item of cards">
-  <span [ngStyle]="{ color: getColor(item) }"> {{ item }}</span>
+<div class="item-list" *ngFor="let item of cards">
+  <span (click)="handleCardClick(item,simplePara)" [ngStyle]="{ color: getColor(item) }">
+    {{ item }}</span
+  >
+  <app-card-details (deleteCardEvent)="handleDeleteCard($event)" [cardValue]="item"></app-card-details>
 </div>
-<button class="btn btn-warning" (click)="appendTime()" >PRINT TIME</button>
+<button class="btn btn-primary" (click)="appendTime()">PRINT TIME</button>
+<button class="btn btn-danger" (click)="clearTime()">CLEAR TIME</button>
 
-<div *ngFor="let item of timeList" >
-  {{item}}
+<div *ngFor="let item of timeList">
+  {{ item }}
 </div>
+
+<hr />
+
