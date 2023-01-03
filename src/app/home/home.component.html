@@ -1,0 +1,16 @@
+<div class="home-container">
+  bgcolor color:<input (change)="handleDefaultColor($event)" /> inline
+  color:<input (change)="handleCustomColor($event)" />
+  <div class="home-content" *ngFor="let item of listForString; index as index">
+    <span appBasicHighLight>{{ index + 1 }} </span>
+    <span appBasicHighLightDirective>{{ item }} </span>
+    <span
+      appHostBindingDirective
+      [default-color]="defaultColor"
+      [custom-color]="customColor"
+      >(universal defect)</span
+    >
+  </div>
+  <span *appStructuralDirective="defaultColor"> display1 </span>
+  <span *appStructuralDirective="!defaultColor"> display2 </span>
+</div>
