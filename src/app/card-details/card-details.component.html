@@ -1,0 +1,8 @@
+<p>card-details works!</p>
+<div *ngIf="cardDetails?.cardId" class="card-details">
+  {{cardDetails.cardId}}
+  {{cardDetails.cardName}}
+  {{cardDetails.cardDesc}}
+</div>
+
+{{cardValue}}<button class="btn btn-danger" (click)="handleDelete(cardValue)">DELETE</button>

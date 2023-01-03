@@ -8,3 +8,10 @@
  background-color: brown;
  color: cornsilk;
 }
+.item-list{
+  border: 1px solid black;
+}
+.item-list>span:hover{
+  cursor: pointer;
+  font-size: large;
+}
