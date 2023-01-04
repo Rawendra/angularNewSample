@@ -1,0 +1,9 @@
+.section-a-container{
+  display: flex;
+  background-color: antiquewhite;
+  flex-wrap: wrap;  
+  justify-content: space-around;
+
+}
+
+ 

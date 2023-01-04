@@ -3,8 +3,6 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { ServerComponent } from "./server/server.component";
-import { ServersComponent } from "./servers/servers.component";
 import { CardComponent } from "./card/card.component";
 import { BasicHighLightDirective } from "./basic-high-light.directive";
 import { HomeComponent } from "./home/home.component";
@@ -13,11 +11,11 @@ import { HostBindingDirectiveDirective } from "./directives/host-binding-directi
 import { StructuralDirectiveDirective } from "./directives/structural-directive.directive";
 import { HeaderComponent } from "./header/header.component";
 import { DropdownDirectiveDirective } from './directives/dropdown-directive.directive';
+import { SectionAComponent } from './components/section-a/section-a.component';
+import { SectionBComponent } from './components/section-b/section-b.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    ServersComponent,
     CardComponent,
     BasicHighLightDirective,
     HomeComponent,
@@ -26,6 +24,8 @@ import { DropdownDirectiveDirective } from './directives/dropdown-directive.dire
     StructuralDirectiveDirective,
     HeaderComponent,
     DropdownDirectiveDirective,
+    SectionAComponent,
+    SectionBComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

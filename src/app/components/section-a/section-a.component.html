@@ -1,0 +1,12 @@
+<p>section-a works!</p>
+
+<div>
+  <div
+    class="section-a-container"
+    *ngFor="let product of appProductService.getProducts(); index as index"
+  >
+    <div>{{ index + 1 }}</div>
+    <div>{{ product.name }}</div>
+    <div>{{ product.status }}</div>
+  </div>
+</div>
