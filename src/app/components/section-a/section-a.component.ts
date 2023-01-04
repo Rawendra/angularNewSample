@@ -6,7 +6,12 @@ import { AppProductsService } from "../../services/app.service.products";
   styleUrls: ["./section-a.component.css"],
 })
 export class SectionAComponent implements OnInit {
-  constructor(private appProductService: AppProductsService) {}
+  statusMessage;
+  constructor(private appProductService: AppProductsService) {
+    this.appProductService.updateStatusEvent.subscribe(
+      (arg) => (this.statusMessage = arg)
+    );
+  }
   _productsList = [];
   ngOnInit(): void {
     this._productsList = this.appProductService.getProducts();

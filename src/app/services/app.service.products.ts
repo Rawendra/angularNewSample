@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 
 @Injectable({
   providedIn: "root",
@@ -19,6 +19,7 @@ export class AppProductsService {
     },
   ];
   constructor() {}
+  updateStatusEvent = new EventEmitter<string>();
 
   addProducts(name: string, status: string) {
     this.products.push({ name: name, status: status });
