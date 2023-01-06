@@ -1,23 +1,24 @@
-<app-server *ngIf="clicked; else noserver"></app-server>
-<app-server *ngIf="clicked; else noserver"></app-server>
-
-
-<button (click)="onClick()" class="btn btn-primary">CLICK</button>
-{{ clicked }}
-
-<div *ngIf="clicked" class="para" [innerText]="paratext"></div>
-
-Enter some input:
-<input type="text" class="form-control" (input)="handleInput($event)" />
-
-You have entered {{ inputText }}
-
-This string is two way binded: {{ twoWayBindedString }}:<input
-  type="text"
-  class="form-control"
-  [(ngModel)]="twoWayBindedString"
-/>
-
-
-<ng-template  #noserver >no server yet</ng-template>
-<app-card></app-card>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        *ngFor="let server of servers"
+        [routerLink]="['/servers', server.id, 'edit']"
+        [queryParams]="{ allowEdit: server.id }"
+        fragment="loading"
+        routerLinkActive="router-link-active"
+        class="list-group-item"
+      >
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <a [routerLink]="['/servers']" routerLinkActive="router-link-active"
+      >Reload Page</a
+    >
+    <app-edit-server></app-edit-server>
+    <hr /> 
+    
+  </div>
+</div>

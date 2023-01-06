@@ -1,0 +1,5 @@
+<p>User with ID {{ selectedUser.id }}</p>
+<p>User name is {{ selectedUser.name }}</p>
+
+<button (click)="handleNavigationAnnaUser()">GO TO ANNA USER</button>
+<a [routerLink]="['/users',10,'Anna']" routerLinkActive="router-link-active" >LINK TO ANNA</a>
