@@ -13,7 +13,7 @@ export class ServersService {
     {
       id: 3,
       name: 'Devserver',
-      status: 'offline'
+      status: 'online'
     }
   ];
 
@@ -22,6 +22,7 @@ export class ServersService {
   }
 
   getServer(id: number) {
+    console.log(id)
     const server = this.servers.find(
       (s) => {
         return s.id === id;
